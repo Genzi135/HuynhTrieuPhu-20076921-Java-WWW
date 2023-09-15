@@ -13,6 +13,7 @@
 <div class="form-container">
     <form action="ControllerServlet" method="get">
         <input type="hidden" , name="action" , value="login">
+        <label for="tittle" , style="display: flex; justify-content: center; font-size: large;">Login</label>
         <div class="form">
             <label for="user">User name</label>
             <input type="text" , name="user" , placeholder="Input your name account" , id="user">
@@ -22,8 +23,8 @@
             <input type="password" name="pwd" , placeholder="*******" , id="pwd">
         </div>
         <div class="button-group">
-            <button id="submit" , type="submit">Submit</button>
-            <button id="clear" , type="reset">Reset</button>
+            <button id="submit" , type="submit" , style="margin-right: 5px;">Submit</button>
+            <button id="clear" , type="reset" , style="margin-left: 5px;">Reset</button>
         </div>
     </form>
 </div>

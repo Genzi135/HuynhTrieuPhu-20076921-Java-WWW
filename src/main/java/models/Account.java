@@ -33,7 +33,12 @@ public class Account {
     }
 
     public Account() {
-
+        account_id = "";
+        full_name = "";
+        password = "";
+        email = "";
+        phone = "";
+        status = 0;
     }
 
     public Account(String account_id, String full_name, String password, String email, String phone, int status) {

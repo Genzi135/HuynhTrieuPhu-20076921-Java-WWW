@@ -19,7 +19,7 @@ body {
     padding-right: 25px;
     border-radius: 15px;
     width: 300px;
-    height: 200px;
+    height: 250px;
 }
 
 .form {
@@ -42,7 +42,7 @@ form input[type=password] {
 }
 
 .button-group {
-    margin-top: 5px;
+    margin-top: 15px;
     display: flex;
     justify-content: center;
 }

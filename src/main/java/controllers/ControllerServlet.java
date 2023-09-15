@@ -55,7 +55,7 @@ public class ControllerServlet extends HttpServlet {
 
             System.out.println(user);
             System.out.println(pwd);
-            System.out.println();
+            System.out.println(acc.getFull_name());
             System.out.println(acc);
 
             if (acc != null) {

@@ -79,7 +79,7 @@ public class AccountRepository {
 
 
     public Account getAccount(String user, String pwd) {
-        String sql = "select * from account where full_name = ? and password = ?";
+        String sql = "select * from account where account_id = ? and password = ?";
         Account acc = null;
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
