@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <script src=""></script>
-    <link rel="stylesheet" href="./CSS/index.css">
+    <script src="JS/login.js"></script>
+    <link rel="stylesheet" href="CSS/index.css">
 </head>
 
 <body>
 <div class="form-container">
-    <form action="login" method="get">
+    <form action="ControllerServlet" method="get">
         <input type="hidden" , name="action" , value="login">
         <div class="form">
             <label for="user">User name</label>
-            <input type="text" , name="user" , placeholder="input ur name account" , id="user">
+            <input type="text" , name="user" , placeholder="Input your name account" , id="user">
         </div>
         <div class="form">
             <label for="pwd">Password</label>

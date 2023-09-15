@@ -1,4 +1,4 @@
-package vn.com.iuh.fit.week1_demoproject.models;
+package models;
 
 public class Account {
     private String account_id;
