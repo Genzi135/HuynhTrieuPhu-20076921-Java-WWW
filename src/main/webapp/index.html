@@ -5,26 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <script src="JS/login.js"></script>
+    <script src="./JS/login.js"></script>
     <link rel="stylesheet" href="CSS/index.css">
 </head>
 
 <body>
 <div class="form-container">
     <form action="ControllerServlet" method="get">
-        <input type="hidden" , name="action" , value="login">
-        <label for="" , style="display: flex; justify-content: center; font-size: large;">Login</label>
+        <input type="hidden" name="action" value="login">
+        <label for="form" id="form" style="display: flex; justify-content: center; font-size: large;">Login</label>
         <div class="form">
             <label for="user">User name</label>
-            <input type="text" , name="user" , placeholder="Input your name account" , id="user">
+            <input type="text" name="user" placeholder="Input your name account" id="user">
         </div>
         <div class="form">
             <label for="pwd">Password</label>
-            <input type="password" name="pwd" , placeholder="*******" , id="pwd">
+            <input type="password" name="pwd" placeholder="*******" id="pwd">
         </div>
         <div class="button-group">
-            <button id="submit" , type="submit" , style="margin-right: 5px;">Submit</button>
-            <button id="clear" , type="reset" , style="margin-left: 5px;">Reset</button>
+            <button id="submit" type="submit" style="margin-right: 5px;">Submit</button>
+            <button id="clear" type="reset" style="margin-left: 5px;">Reset</button>
         </div>
     </form>
 </div>
