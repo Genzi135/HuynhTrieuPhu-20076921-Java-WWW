@@ -21,7 +21,7 @@ document.getElementById("btnLogout").addEventListener("click", () => {
 });
 
 fetch(
-    "http://localhost:8080/week01_demoProject/ControllerServlet?action=getall"
+    "http://localhost:8080/Gradle___vn_com_iuh_fit___week1_demoProject_1_0_SNAPSHOT_war/ControllerServlet?action=getall"
 )
     .then((response) => response.json())
     .then((data) =>

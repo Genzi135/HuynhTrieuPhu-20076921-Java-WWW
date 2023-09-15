@@ -85,7 +85,7 @@ public class ControllerServlet extends HttpServlet {
                 HttpSession session = req.getSession();
                 session.setAttribute("loggedInUser", acc.getFull_name());
 
-                //resp.sendRedirect("dashboard.html");
+                resp.sendRedirect("dashboard.html");
             } else {
                 resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
             }
