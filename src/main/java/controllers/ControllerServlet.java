@@ -3,6 +3,7 @@ package controllers;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebInitParam;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -13,6 +14,7 @@ import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.List;
 
+import jakarta.servlet.http.HttpSession;
 import models.Account;
 import models.GrantAccess;
 
@@ -22,7 +24,7 @@ import repositories.AccountRepository;
 import java.io.IOException;
 
 
-@WebServlet(urlPatterns = {"/ControllerServlet"})
+@WebServlet(name = "ControllerServlet", urlPatterns = {"/ControllerServlet"})
 public class ControllerServlet extends HttpServlet {
 
     private final AccountRepository accRep;
@@ -79,6 +81,10 @@ public class ControllerServlet extends HttpServlet {
                 resp.setCharacterEncoding("UTF-8");
                 resp.getWriter().write(objData.toString());
                 resp.setStatus(HttpServletResponse.SC_OK);
+
+                HttpSession session = req.getSession();
+                session.setAttribute("loggedInUser", acc.getFull_name());
+
                 resp.sendRedirect("dashboard.html");
             } else {
                 resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
