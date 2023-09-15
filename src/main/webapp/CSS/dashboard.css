@@ -1,0 +1,12 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20%;
+    background-color: rgba(46, 220, 46, 0.619);
+}

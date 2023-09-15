@@ -79,7 +79,7 @@ public class ControllerServlet extends HttpServlet {
                 resp.setCharacterEncoding("UTF-8");
                 resp.getWriter().write(objData.toString());
                 resp.setStatus(HttpServletResponse.SC_OK);
-
+                resp.sendRedirect("dashboard.html");
             } else {
                 resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
             }
