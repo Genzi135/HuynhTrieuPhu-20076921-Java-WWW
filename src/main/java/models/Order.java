@@ -5,7 +5,6 @@ import org.joda.time.DateTime;
 
 @Entity
 @Table(name = "orders")
-@Embeddable
 public class Order {
     //order (order_id, order_date, emp_id, cust_id)
     @Id
@@ -14,10 +13,14 @@ public class Order {
     @Column(name = "order_date")
     private DateTime date;
 
-    @Column
+    @Id
+    @ManyToOne
+    @JoinColumn(name = "emp_id")
     private Employee emp_id;
 
-    @Column
+    @Id
+    @ManyToOne
+    @JoinColumn
     private Customer cus_id;
 
     public Order(String id, DateTime date, Employee emp_id, Customer cus_id) {

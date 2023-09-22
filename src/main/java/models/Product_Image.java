@@ -1,15 +1,14 @@
 package models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table
 public class Product_Image {
     //product_image (product_id, image_id, path, alternative)
-    @Column
+    @Id
+    @ManyToOne
+    @JoinColumn(name = "product_id")
     private Product product_id;
     @Id
     @Column(name = "image_id")

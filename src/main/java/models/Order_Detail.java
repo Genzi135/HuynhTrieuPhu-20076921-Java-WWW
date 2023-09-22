@@ -1,17 +1,18 @@
 package models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table
 public class Order_Detail {
     //order_detail (order_id, product_id, quantity, price, note)
-    @Column
+    @Id
+    @ManyToOne
+    @JoinColumn(name = "order_id")
     private Order order_id;
-    @Column
+    @Id
+    @ManyToOne
+    @JoinColumn(name = "product_id")
     private Product product_id;
     @Column
     private int quantity;

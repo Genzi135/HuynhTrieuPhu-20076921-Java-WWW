@@ -2,11 +2,10 @@ package models;
 
 import emuns.EmpStatus;
 import jakarta.persistence.*;
-import jdk.jshell.Snippet;
+
 
 @Entity
 @Table(name = "product")
-@Embeddable
 public class Product {
     //product (product_id, name, description, unit, manufacturer_name, status)
     @Id

@@ -1,15 +1,15 @@
 package models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import org.joda.time.DateTime;
 
 @Entity
 @Table
 public class Product_Price {
     //product_price (product_id, price_date_time, price, note)
-    @Column
+    @Id
+    @ManyToOne
+    @JoinColumn
     private Product product_id;
     @Column(name = "price_date_time")
     private DateTime date;

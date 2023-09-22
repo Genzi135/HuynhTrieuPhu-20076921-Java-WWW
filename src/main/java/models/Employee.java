@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "employees")
-@Embeddable
 public class Employee {
     @Id
     @Column(name = "emp_id")
