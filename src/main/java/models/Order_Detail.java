@@ -10,6 +10,7 @@ public class Order_Detail {
     @ManyToOne
     @JoinColumn(name = "order_id")
     private Order order_id;
+
     @Id
     @ManyToOne
     @JoinColumn(name = "product_id")

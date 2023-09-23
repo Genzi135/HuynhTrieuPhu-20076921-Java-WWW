@@ -13,14 +13,14 @@ public class Order {
     @Column(name = "order_date")
     private DateTime date;
 
-    @Id
+
     @ManyToOne
     @JoinColumn(name = "emp_id")
     private Employee emp_id;
 
-    @Id
+
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(name = "cus_id")
     private Customer cus_id;
 
     public Order(String id, DateTime date, Employee emp_id, Customer cus_id) {
