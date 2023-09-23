@@ -1,10 +1,9 @@
-package repositories;
+package backend.repositories;
 
-import Connection.ConnectDB;
+import backend.Connection.ConnectDB;
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
-import models.Employee;
+import backend.models.Employee;
 
 public class EmployeeRepositories {
     private EntityManager em;

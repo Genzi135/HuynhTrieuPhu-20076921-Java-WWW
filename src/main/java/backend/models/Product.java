@@ -1,6 +1,6 @@
-package models;
+package backend.models;
 
-import emuns.EmpStatus;
+import backend.emuns.EmpStatus;
 import jakarta.persistence.*;
 
 

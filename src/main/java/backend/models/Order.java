@@ -1,4 +1,4 @@
-package models;
+package backend.models;
 
 import jakarta.persistence.*;
 import org.joda.time.DateTime;

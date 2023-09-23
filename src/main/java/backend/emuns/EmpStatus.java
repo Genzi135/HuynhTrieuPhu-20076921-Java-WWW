@@ -1,4 +1,4 @@
-package emuns;
+package backend.emuns;
 
 public enum EmpStatus {
     ACTIVE(1),

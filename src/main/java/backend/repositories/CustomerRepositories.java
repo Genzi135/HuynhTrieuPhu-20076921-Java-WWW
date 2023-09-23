@@ -1,13 +1,9 @@
-package repositories;
+package backend.repositories;
 
-import Connection.ConnectDB;
+import backend.Connection.ConnectDB;
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
-import models.Customer;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
+import backend.models.Customer;
 
 public class CustomerRepositories {
     private EntityManager em;

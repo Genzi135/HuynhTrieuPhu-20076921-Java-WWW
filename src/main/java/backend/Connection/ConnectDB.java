@@ -1,10 +1,7 @@
-package Connection;
+package backend.Connection;
 
-import emuns.EmpStatus;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
-
-import java.sql.Connection;
 
 
 public class ConnectDB {

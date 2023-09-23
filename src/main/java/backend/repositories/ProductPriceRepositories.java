@@ -1,6 +1,4 @@
-package repositories;
-
-import Connection.ConnectDB;
+package backend.repositories;
 
 public class ProductPriceRepositories {
 
