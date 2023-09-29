@@ -8,19 +8,23 @@ import org.joda.time.DateTime;
 public class Product_Price {
     //product_price (product_id, price_date_time, price, note)
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long price_id;
+
     @ManyToOne
-    @JoinColumn
-    private Product product_id;
-    @Column(name = "price_date_time")
-    private DateTime date;
-    @Column
-    private double price;
-    @Column
+    @JoinColumn(name = "product_id")
+    private Product product;
+
+    private DateTime price_date_time;
+
+    private long price;
+
     private String note;
 
-    public Product_Price(Product product_id, DateTime date, double price, String note) {
-        this.product_id = product_id;
-        this.date = date;
+    public Product_Price(Long price_id, Product product, DateTime price_date_time, long price, String note) {
+        this.price_id = price_id;
+        this.product = product;
+        this.price_date_time = price_date_time;
         this.price = price;
         this.note = note;
     }
@@ -28,27 +32,35 @@ public class Product_Price {
     public Product_Price() {
     }
 
-    public Product getProduct_id() {
-        return product_id;
+    public Long getPrice_id() {
+        return price_id;
     }
 
-    public void setProduct_id(Product product_id) {
-        this.product_id = product_id;
+    public void setPrice_id(Long price_id) {
+        this.price_id = price_id;
     }
 
-    public DateTime getDate() {
-        return date;
+    public Product getProduct() {
+        return product;
     }
 
-    public void setDate(DateTime date) {
-        this.date = date;
+    public void setProduct(Product product) {
+        this.product = product;
     }
 
-    public double getPrice() {
+    public DateTime getPrice_date_time() {
+        return price_date_time;
+    }
+
+    public void setPrice_date_time(DateTime price_date_time) {
+        this.price_date_time = price_date_time;
+    }
+
+    public long getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(long price) {
         this.price = price;
     }
 
@@ -63,8 +75,9 @@ public class Product_Price {
     @Override
     public String toString() {
         return "Product_Price{" +
-                "product_id=" + product_id +
-                ", date=" + date +
+                "price_id=" + price_id +
+                ", product=" + product +
+                ", price_date_time=" + price_date_time +
                 ", price=" + price +
                 ", note='" + note + '\'' +
                 '}';

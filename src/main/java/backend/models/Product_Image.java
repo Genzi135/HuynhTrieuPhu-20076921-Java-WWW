@@ -7,20 +7,20 @@ import jakarta.persistence.*;
 public class Product_Image {
     //product_image (product_id, image_id, path, alternative)
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long image_id;
+
     @ManyToOne
     @JoinColumn(name = "product_id")
-    private Product product_id;
-    @Id
-    @Column(name = "image_id")
-    private String id;
-    @Column
+    private Product product;
+
     private String path;
-    @Column
+
     private String alternative;
 
-    public Product_Image(Product product_id, String id, String path, String alternative) {
-        this.product_id = product_id;
-        this.id = id;
+    public Product_Image(Long image_id, Product product, String path, String alternative) {
+        this.image_id = image_id;
+        this.product = product;
         this.path = path;
         this.alternative = alternative;
     }
@@ -28,20 +28,20 @@ public class Product_Image {
     public Product_Image() {
     }
 
-    public Product getProduct_id() {
-        return product_id;
+    public Long getImage_id() {
+        return image_id;
     }
 
-    public void setProduct_id(Product product_id) {
-        this.product_id = product_id;
+    public void setImage_id(Long image_id) {
+        this.image_id = image_id;
     }
 
-    public String getId() {
-        return id;
+    public Product getProduct() {
+        return product;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setProduct(Product product) {
+        this.product = product;
     }
 
     public String getPath() {
@@ -63,8 +63,8 @@ public class Product_Image {
     @Override
     public String toString() {
         return "Product_Image{" +
-                "product_id=" + product_id +
-                ", id='" + id + '\'' +
+                "image_id=" + image_id +
+                ", product=" + product +
                 ", path='" + path + '\'' +
                 ", alternative='" + alternative + '\'' +
                 '}';

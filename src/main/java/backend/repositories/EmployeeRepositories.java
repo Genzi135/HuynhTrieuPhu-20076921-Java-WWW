@@ -4,14 +4,15 @@ import backend.Connection.ConnectDB;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import backend.models.Employee;
+import jakarta.persistence.Persistence;
 
 public class EmployeeRepositories {
-    private EntityManager em;
+    private final EntityManager em;
 
-    private EntityTransaction tr;
+    private final EntityTransaction tr;
 
     public EmployeeRepositories() {
-        em = ConnectDB.getInstance().getEntityManagerFactory().createEntityManager();
+        em = Persistence.createEntityManagerFactory("HuynhTrieuPhu-20076921-week2").createEntityManager();
         tr = em.getTransaction();
     }
 
@@ -21,7 +22,11 @@ public class EmployeeRepositories {
             em.persist(employee);
             tr.commit();
         } catch (Exception e) {
+            if (tr.isActive())
+                tr.rollback();
             e.printStackTrace();
+        } finally {
+            em.close();
         }
     }
 
@@ -31,7 +36,11 @@ public class EmployeeRepositories {
             em.remove(id);
             tr.commit();
         } catch (Exception e) {
+            if (tr.isActive())
+                tr.rollback();
             e.printStackTrace();
+        } finally {
+            em.close();
         }
     }
 
@@ -41,7 +50,11 @@ public class EmployeeRepositories {
             em.merge(employee);
             tr.commit();
         } catch (Exception e) {
+            if (tr.isActive())
+                tr.rollback();
             e.printStackTrace();
+        } finally {
+            em.close();
         }
     }
 }

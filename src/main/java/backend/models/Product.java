@@ -6,26 +6,29 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "product")
+@NamedQueries(value = {
+        @NamedQuery(name = "Product.findAll", query = "from  Product where status=1"),
+        @NamedQuery(name = "Product.findById", query = "select id from  Product where id=product_id")
+})
 public class Product {
     //product (product_id, name, description, unit, manufacturer_name, status)
     @Id
-    @Column(name = "product_id")
-    private String id;
-    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long product_id;
+
     private String name;
-    @Column(name = "description")
-    private String desc;
-    @Column
-    private long unit;
-    @Column
+
+    private String description;
+
+    private String unit;
+
     private String manufacturer_name;
-    @Column
+
     private EmpStatus status;
 
-    public Product(String id, String name, String desc, long unit, String manufacturer_name, EmpStatus status) {
-        this.id = id;
+    public Product(String name, String description, String unit, String manufacturer_name, EmpStatus status) {
         this.name = name;
-        this.desc = desc;
+        this.description = description;
         this.unit = unit;
         this.manufacturer_name = manufacturer_name;
         this.status = status;
@@ -34,13 +37,10 @@ public class Product {
     public Product() {
     }
 
-    public String getId() {
-        return id;
+    public Long getProduct_id() {
+        return product_id;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -50,19 +50,19 @@ public class Product {
         this.name = name;
     }
 
-    public String getDesc() {
-        return desc;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public long getUnit() {
+    public String getUnit() {
         return unit;
     }
 
-    public void setUnit(long unit) {
+    public void setUnit(String unit) {
         this.unit = unit;
     }
 
@@ -85,10 +85,10 @@ public class Product {
     @Override
     public String toString() {
         return "Product{" +
-                "id='" + id + '\'' +
+                "product_id=" + product_id +
                 ", name='" + name + '\'' +
-                ", desc='" + desc + '\'' +
-                ", unit=" + unit +
+                ", description='" + description + '\'' +
+                ", unit='" + unit + '\'' +
                 ", manufacturer_name='" + manufacturer_name + '\'' +
                 ", status=" + status +
                 '}';

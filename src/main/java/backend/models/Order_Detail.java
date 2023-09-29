@@ -2,29 +2,34 @@ package backend.models;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table
 public class Order_Detail {
     //order_detail (order_id, product_id, quantity, price, note)
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long order_detail_id;
+
     @ManyToOne
     @JoinColumn(name = "order_id")
-    private Order order_id;
+    private Order order;
 
-    @Id
     @ManyToOne
     @JoinColumn(name = "product_id")
-    private Product product_id;
-    @Column
+    private Product product;
+
     private int quantity;
-    @Column
-    private double price;
-    @Column
+
+    private long price;
+
     private String note;
 
-    public Order_Detail(Order order_id, Product product_id, int quantity, double price, String note) {
-        this.order_id = order_id;
-        this.product_id = product_id;
+    public Order_Detail(Long order_detail_id, Order order, Product product, int quantity, long price, String note) {
+        this.order_detail_id = order_detail_id;
+        this.order = order;
+        this.product = product;
         this.quantity = quantity;
         this.price = price;
         this.note = note;
@@ -33,20 +38,28 @@ public class Order_Detail {
     public Order_Detail() {
     }
 
-    public Order getOrder_id() {
-        return order_id;
+    public Long getOrder_detail_id() {
+        return order_detail_id;
     }
 
-    public void setOrder_id(Order order_id) {
-        this.order_id = order_id;
+    public void setOrder_detail_id(Long order_detail_id) {
+        this.order_detail_id = order_detail_id;
     }
 
-    public Product getProduct_id() {
-        return product_id;
+    public Order getOrder() {
+        return order;
     }
 
-    public void setProduct_id(Product product_id) {
-        this.product_id = product_id;
+    public void setOrder(Order order) {
+        this.order = order;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
     }
 
     public int getQuantity() {
@@ -57,11 +70,11 @@ public class Order_Detail {
         this.quantity = quantity;
     }
 
-    public double getPrice() {
+    public long getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(long price) {
         this.price = price;
     }
 
@@ -76,8 +89,9 @@ public class Order_Detail {
     @Override
     public String toString() {
         return "Order_Detail{" +
-                "order_id=" + order_id +
-                ", product_id=" + product_id +
+                "order_detail_id=" + order_detail_id +
+                ", order=" + order +
+                ", product=" + product +
                 ", quantity=" + quantity +
                 ", price=" + price +
                 ", note='" + note + '\'' +

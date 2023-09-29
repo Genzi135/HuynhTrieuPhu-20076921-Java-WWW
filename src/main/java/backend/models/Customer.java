@@ -6,42 +6,42 @@ import jakarta.persistence.*;
 @Table(name = "customer")
 public class Customer {
     @Id
-    @Column(name = "cus_id")
-    private String id;
-    @Column(name = "cus_name")
-    private String name;
-    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long cust_id;
+
+    private String cust_name;
+
     private String email;
-    @Column
+
     private String phone;
-    @Column
+
     private String address;
 
-    public Customer(String id, String name, String email, String phone, String address) {
-        this.id = id;
-        this.name = name;
+    public Customer() {
+    }
+
+    public Customer(Long cust_id, String cust_name, String email, String phone, String address) {
+        this.cust_id = cust_id;
+        this.cust_name = cust_name;
         this.email = email;
         this.phone = phone;
         this.address = address;
     }
 
-    public Customer() {
+    public Long getCust_id() {
+        return cust_id;
     }
 
-    public String getId() {
-        return id;
+    public void setCust_id(Long cust_id) {
+        this.cust_id = cust_id;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public String getCust_name() {
+        return cust_name;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public void setCust_name(String cust_name) {
+        this.cust_name = cust_name;
     }
 
     public String getEmail() {
@@ -71,8 +71,8 @@ public class Customer {
     @Override
     public String toString() {
         return "Customer{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
+                "cust_id=" + cust_id +
+                ", cust_name='" + cust_name + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
                 ", address='" + address + '\'' +

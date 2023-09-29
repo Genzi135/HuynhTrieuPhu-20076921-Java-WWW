@@ -8,70 +8,68 @@ import org.joda.time.DateTime;
 public class Order {
     //order (order_id, order_date, emp_id, cust_id)
     @Id
-    @Column(name = "order_id")
-    private String id;
-    @Column(name = "order_date")
-    private DateTime date;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long order_id;
 
+    private DateTime order_date;
 
     @ManyToOne
     @JoinColumn(name = "emp_id")
-    private Employee emp_id;
-
+    private Employee employee;
 
     @ManyToOne
-    @JoinColumn(name = "cus_id")
-    private Customer cus_id;
+    @JoinColumn(name = "cust_id")
+    private Customer customer;
 
-    public Order(String id, DateTime date, Employee emp_id, Customer cus_id) {
-        this.id = id;
-        this.date = date;
-        this.emp_id = emp_id;
-        this.cus_id = cus_id;
+    public Order(Long order_id, DateTime order_date, Employee employee, Customer customer) {
+        this.order_id = order_id;
+        this.order_date = order_date;
+        this.employee = employee;
+        this.customer = customer;
     }
 
     public Order() {
     }
 
-    public String getId() {
-        return id;
+    public Long getOrder_id() {
+        return order_id;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setOrder_id(Long order_id) {
+        this.order_id = order_id;
     }
 
-    public DateTime getDate() {
-        return date;
+    public DateTime getOrder_date() {
+        return order_date;
     }
 
-    public void setDate(DateTime date) {
-        this.date = date;
+    public void setOrder_date(DateTime order_date) {
+        this.order_date = order_date;
     }
 
-    public Employee getEmp_id() {
-        return emp_id;
+    public Employee getEmployee() {
+        return employee;
     }
 
-    public void setEmp_id(Employee emp_id) {
-        this.emp_id = emp_id;
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
     }
 
-    public Customer getCus_id() {
-        return cus_id;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setCus_id(Customer cus_id) {
-        this.cus_id = cus_id;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
     @Override
     public String toString() {
         return "Order{" +
-                "id='" + id + '\'' +
-                ", date=" + date +
-                ", emp_id=" + emp_id +
-                ", cus_id=" + cus_id +
+                "order_id=" + order_id +
+                ", order_date=" + order_date +
+                ", employee=" + employee +
+                ", customer=" + customer +
                 '}';
     }
 }
