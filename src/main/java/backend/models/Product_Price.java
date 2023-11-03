@@ -21,8 +21,7 @@ public class Product_Price {
 
     private String note;
 
-    public Product_Price(Long price_id, Product product, DateTime price_date_time, long price, String note) {
-        this.price_id = price_id;
+    public Product_Price(Product product, DateTime price_date_time, long price, String note) {
         this.product = product;
         this.price_date_time = price_date_time;
         this.price = price;

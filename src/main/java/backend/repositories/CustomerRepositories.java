@@ -1,6 +1,5 @@
 package backend.repositories;
 
-import backend.Connection.ConnectDB;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import backend.models.Customer;
@@ -25,8 +24,6 @@ public class CustomerRepositories {
             if (tr.isActive())
                 tr.rollback();
             e.printStackTrace();
-        } finally {
-            em.close();
         }
     }
 
@@ -39,8 +36,6 @@ public class CustomerRepositories {
             if (tr.isActive())
                 tr.rollback();
             e.printStackTrace();
-        } finally {
-            em.close();
         }
     }
 
@@ -53,9 +48,12 @@ public class CustomerRepositories {
             if (tr.isActive())
                 tr.rollback();
             e.printStackTrace();
-        } finally {
-            em.close();
         }
     }
+
+    public Customer find(long id) {
+        return em.find(Customer.class, id);
+    }
+
 
 }

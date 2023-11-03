@@ -26,8 +26,7 @@ public class Order_Detail {
 
     private String note;
 
-    public Order_Detail(Long order_detail_id, Order order, Product product, int quantity, long price, String note) {
-        this.order_detail_id = order_detail_id;
+    public Order_Detail(Order order, Product product, int quantity, long price, String note) {
         this.order = order;
         this.product = product;
         this.quantity = quantity;

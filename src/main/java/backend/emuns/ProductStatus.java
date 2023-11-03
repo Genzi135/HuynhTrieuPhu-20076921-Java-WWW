@@ -1,6 +1,6 @@
 package backend.emuns;
 
-public enum EmpStatus {
+public enum ProductStatus {
     ACTIVE,
     IN_ACTIVE,
     TERMINATED;

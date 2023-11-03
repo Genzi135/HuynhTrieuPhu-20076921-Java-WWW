@@ -4,28 +4,32 @@ import backend.emuns.EmpStatus;
 import jakarta.persistence.*;
 import org.joda.time.DateTime;
 
+import java.util.List;
+
 @Entity
 @Table(name = "employees")
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long emp_id;
-
-    private String full_name;
-
+    @Column(name = "emp_id")
+    private Long id;
+    @Column(name = "full_name", length = 150)
+    private String fullName;
+    @Column
     private DateTime dob;
-
+    @Column(length = 150)
     private String email;
-
+    @Column(length = 15)
     private String phone;
-
+    @Column(length = 250)
     private String address;
-
+    @Column
     private EmpStatus status;
+    @OneToMany(mappedBy = "order_id", fetch = FetchType.LAZY)
+    private List<Order> orderList;
 
-    public Employee(Long emp_id, String full_name, DateTime dob, String email, String phone, String address, EmpStatus status) {
-        this.emp_id = emp_id;
-        this.full_name = full_name;
+    public Employee(String fullName, DateTime dob, String email, String phone, String address, EmpStatus status) {
+        this.fullName = fullName;
         this.dob = dob;
         this.email = email;
         this.phone = phone;
@@ -36,20 +40,20 @@ public class Employee {
     public Employee() {
     }
 
-    public Long getEmp_id() {
-        return emp_id;
+    public Long getId() {
+        return id;
     }
 
-    public void setEmp_id(Long emp_id) {
-        this.emp_id = emp_id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getFull_name() {
-        return full_name;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setFull_name(String full_name) {
-        this.full_name = full_name;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public DateTime getDob() {
@@ -92,16 +96,25 @@ public class Employee {
         this.status = status;
     }
 
+    public List<Order> getOrderList() {
+        return orderList;
+    }
+
+    public void setOrderList(List<Order> orderList) {
+        this.orderList = orderList;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
-                "emp_id=" + emp_id +
-                ", full_name='" + full_name + '\'' +
+                "id=" + id +
+                ", fullName='" + fullName + '\'' +
                 ", dob=" + dob +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
                 ", address='" + address + '\'' +
                 ", status=" + status +
+                ", orderList=" + orderList +
                 '}';
     }
 }

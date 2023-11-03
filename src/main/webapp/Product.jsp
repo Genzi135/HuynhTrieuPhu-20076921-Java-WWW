@@ -13,12 +13,12 @@
 <head>
     <title>Product List</title>
 </head>
-<body>
+<body style="background-color: blueviolet">
 <%
     ProductServices productServices = new ProductServices();
     List<Product> lst = productServices.getActiveProduct();
 %>
-<table width="70%" align="center" border="1">
+<table width="70%" align="center" border="1" style="background-color: aliceblue">
     <tr>
         <th>id</th>
         <th>name</th>
@@ -27,20 +27,23 @@
         <th>manufacturer name</th>
         <th>Status</th>
         <th colspan="2"><a href="ProductInsert.jsp">Insert</a></th>
-
     </tr>
     <%
-
         for (Product product2 : lst) {
-
     %>
     <tr>
-        <td><%product2.getProduct_id();%></td>
-        <td><%product2.getName();%></td>
-        <td><%product2.getDescription();%></td>
-        <td><%product2.getUnit();%></td>
-        <td><%product2.getManufacturer_name();%></td>
-        <td><%product2.getStatus();%></td>
+        <td><%= product2.getProduct_id()%>
+        </td>
+        <td><%= product2.getName()%>
+        </td>
+        <td><%=product2.getDescription()%>
+        </td>
+        <td><%=product2.getUnit()%>
+        </td>
+        <td><%=product2.getManufacturer_name()%>
+        </td>
+        <td><%=product2.getStatus()%>
+        </td>
         <td><a href="">Update</a></td>
         <td><a href="">Delete</a></td>
     </tr>

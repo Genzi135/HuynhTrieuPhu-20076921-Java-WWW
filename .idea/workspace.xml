@@ -5,34 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f947e635-6c85-4e2b-b29b-c0af75b9fcb0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/backend/Converters/EmpStatusConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/backend/Services/En4OrderDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/backend/Services/En4Orders.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/backend/Services/OrderDetailServices.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/backend/Services/OrderServices.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/backend/Services/ProductServices.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/frontend/models/ProductModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/Product.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/ProductInsert.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/backend/emuns/ProductStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/Connection/ConnectDB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/Converters/EmpStatusConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/Services/En4OrderDetail.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/Services/En4Orders.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/backend/emuns/EmpStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/emuns/EmpStatus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/backend/models/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/models/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/backend/models/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/models/Employee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/backend/models/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/models/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/backend/models/Order_Detail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/models/Order_Detail.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/backend/models/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/models/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/backend/models/Product_Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/models/Product_Image.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/backend/models/Product_Price.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/models/Product_Price.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/backend/repositories/CustomerRepositories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/repositories/CustomerRepositories.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/backend/repositories/EmployeeRepositories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/repositories/EmployeeRepositories.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/backend/repositories/OrderDetailRepositories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/repositories/OrderDetailRepositories.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/backend/repositories/OrderRepositories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/repositories/OrderRepositories.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/backend/repositories/ProductRepositories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/repositories/ProductRepositories.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/Controllers/ServletController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frontend/Controllers/ServletController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/Controllers/ServletController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/models/Customer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/models/ProductModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Product.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ProductInsert.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ProductInsert.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,17 +41,35 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Jsp File" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -85,12 +100,17 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;week2&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;T:/HuynhTrieuPhu/labs/week2&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Java/WWW/labs/Java_www/week2&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mariadb&quot;
+    ]
   }
 }</component>
   <component name="RecentsManager">
@@ -234,7 +254,17 @@
       <workItem from="1695352861311" duration="3227000" />
       <workItem from="1695356102617" duration="4417000" />
       <workItem from="1695448134126" duration="4024000" />
-      <workItem from="1695986215820" duration="368000" />
+      <workItem from="1695986215820" duration="1051000" />
+      <workItem from="1695990764183" duration="128000" />
+      <workItem from="1696007983465" duration="146000" />
+      <workItem from="1696008452598" duration="1537000" />
+      <workItem from="1696748418911" duration="1000" />
+      <workItem from="1697171222221" duration="288000" />
+      <workItem from="1698150513030" duration="217000" />
+      <workItem from="1698225007520" duration="2481000" />
+      <workItem from="1698249584554" duration="2086000" />
+      <workItem from="1698301584850" duration="72000" />
+      <workItem from="1698997806600" duration="1944000" />
     </task>
     <task id="LOCAL-00001" summary="add repositories and fix persistence.xml">
       <option name="closed" value="true" />
@@ -244,7 +274,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695454764488</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fix project struture, write front end and services">
+      <option name="closed" value="true" />
+      <created>1695986649345</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1695986649345</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,7 +290,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add repositories and fix persistence.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="add repositories and fix persistence.xml" />
+    <MESSAGE value="fix project struture, write front end and services" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix project struture, write front end and services" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

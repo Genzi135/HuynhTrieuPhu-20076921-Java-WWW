@@ -2,46 +2,50 @@ package backend.models;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "customer")
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long cust_id;
-
-    private String cust_name;
-
+    @Column(name = "cust_id")
+    private Long id;
+    @Column(name = "cust_name", length = 150)
+    private String name;
+    @Column(length = 150)
     private String email;
-
+    @Column(length = 15)
     private String phone;
-
+    @Column(length = 250)
     private String address;
+    @OneToMany(mappedBy = "order_id", fetch = FetchType.LAZY)
+    private List<Order> orderList;
 
-    public Customer() {
-    }
-
-    public Customer(Long cust_id, String cust_name, String email, String phone, String address) {
-        this.cust_id = cust_id;
-        this.cust_name = cust_name;
+    public Customer(String name, String email, String phone, String address) {
+        this.name = name;
         this.email = email;
         this.phone = phone;
         this.address = address;
     }
 
-    public Long getCust_id() {
-        return cust_id;
+    public Customer() {
     }
 
-    public void setCust_id(Long cust_id) {
-        this.cust_id = cust_id;
+    public Long getId() {
+        return id;
     }
 
-    public String getCust_name() {
-        return cust_name;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public void setCust_name(String cust_name) {
-        this.cust_name = cust_name;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
@@ -71,8 +75,8 @@ public class Customer {
     @Override
     public String toString() {
         return "Customer{" +
-                "cust_id=" + cust_id +
-                ", cust_name='" + cust_name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
                 ", address='" + address + '\'' +

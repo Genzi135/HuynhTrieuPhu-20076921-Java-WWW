@@ -3,6 +3,8 @@ package backend.models;
 import backend.emuns.EmpStatus;
 import jakarta.persistence.*;
 
+import java.util.List;
+
 
 @Entity
 @Table(name = "product")
@@ -26,6 +28,15 @@ public class Product {
 
     private EmpStatus status;
 
+    @OneToMany(mappedBy = "order_detail_id")
+    private List<Order_Detail> order_detailList;
+
+    @OneToMany(mappedBy = "image_id")
+    private List<Product_Image> productImageList;
+
+    @OneToMany(mappedBy = "price_id")
+    private List<Product_Price> productPriceList;
+
     public Product(String name, String description, String unit, String manufacturer_name, EmpStatus status) {
         this.name = name;
         this.description = description;
@@ -41,6 +52,9 @@ public class Product {
         return product_id;
     }
 
+    public void setProduct_id(Long product_id) {
+        this.product_id = product_id;
+    }
 
     public String getName() {
         return name;
@@ -82,6 +96,30 @@ public class Product {
         this.status = status;
     }
 
+    public List<Order_Detail> getOrder_detailList() {
+        return order_detailList;
+    }
+
+    public void setOrder_detailList(List<Order_Detail> order_detailList) {
+        this.order_detailList = order_detailList;
+    }
+
+    public List<Product_Image> getProductImageList() {
+        return productImageList;
+    }
+
+    public void setProductImageList(List<Product_Image> productImageList) {
+        this.productImageList = productImageList;
+    }
+
+    public List<Product_Price> getProductPriceList() {
+        return productPriceList;
+    }
+
+    public void setProductPriceList(List<Product_Price> productPriceList) {
+        this.productPriceList = productPriceList;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
@@ -91,6 +129,9 @@ public class Product {
                 ", unit='" + unit + '\'' +
                 ", manufacturer_name='" + manufacturer_name + '\'' +
                 ", status=" + status +
+                ", order_detailList=" + order_detailList +
+                ", productImageList=" + productImageList +
+                ", productPriceList=" + productPriceList +
                 '}';
     }
 }
