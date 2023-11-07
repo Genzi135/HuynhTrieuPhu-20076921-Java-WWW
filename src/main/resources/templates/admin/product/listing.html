@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <title>Danh sách sản phẩm</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Thêm link tới CSS stylesheet của bạn nếu cần -->
+
     <style>
-        /* Tùy chỉnh CSS của bạn ở đây */
         body {
             font-family: Arial, sans-serif;
             padding: 20px;
@@ -76,7 +75,6 @@
     </tr>
     </thead>
     <tbody>
-    <!-- Sử dụng Thymeleaf để lặp qua danh sách sản phẩm -->
     <tr th:each="product : ${productPage.content}">
         <td th:text="${product.product_id}"></td>
         <td th:text="${product.name}"></td>
@@ -88,10 +86,8 @@
     </tbody>
 </table>
 
-<!-- Hiển thị số trang -->
 <div class="pagination">
     <ul>
-        <!-- Sử dụng Thymeleaf để lặp qua số trang -->
         <li th:each="pageNumber : ${pageNumber}">
             <span th:if="${pageNumber} == ${productPage.number + 1}" th:text="${pageNumber}" class="current-page"></span>
             <a th:if="${pageNumber} != ${productPage.number + 1}" th:href="@{'/products?page=' + ${pageNumber} + '&size=' + ${productPage.size}}" th:text="${pageNumber}"></a>
