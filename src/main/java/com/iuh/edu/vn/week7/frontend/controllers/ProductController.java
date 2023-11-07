@@ -8,10 +8,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -55,13 +52,13 @@ public class ProductController {
         return "admin/product/add-form";
     }
 
-    @GetMapping("/products/add")
+    @PostMapping("/products/add")
     public String addProduct(@ModelAttribute("product") Product product, BindingResult result, Model model){
         productRepository.save(product);
         return "redirect:/products";
     }
 
-    @GetMapping("/products/detete/{id}")
+    @GetMapping("/products/delete/{id}")
     public String deleteProduct(@PathVariable("id") long id){
         Product product=productRepository.findById(id).orElse(new Product());
         productRepository.delete(product);

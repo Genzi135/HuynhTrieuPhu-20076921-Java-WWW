@@ -72,6 +72,7 @@
         <th>Đơn vị</th>
         <th>Giá</th>
         <th>Mô tả</th>
+        <th colspan="2">Link</th>
     </tr>
     </thead>
     <tbody>
@@ -82,6 +83,11 @@
         <td th:text="${product.unit}"></td>
         <td th:text="${product.productPrices[0].price}"></td>
         <td th:text="${product.description}"></td>
+        <td>
+            <a href="/show-add-form">Add</a>
+            <a th:href="@{/products/delete/{id}(id=${product.product_id})}" class="delete-link">Delete</a>
+
+        </td>
     </tr>
     </tbody>
 </table>

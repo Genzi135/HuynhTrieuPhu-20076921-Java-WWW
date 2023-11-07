@@ -2,9 +2,49 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Add Product</title>
 </head>
 <body>
+<h1>Add Product</h1>
+<form th:action="@{/products/add}" th:object="${product}" method="post">
+    <div>
+        <label>Name:</label>
+        <div>
+            <input type="text" id="inputName" th:field="*{name}">
+        </div>
+    </div>
+    <div>
+        <label>Unit:</label>
+        <div>
+            <input type="text" id="inputUnit" th:field="*{unit}">
+        </div>
+    </div>
+    <div>
+        <label>Manufacturer:</label>
+        <div>
+            <input type="text" id="inputManu" th:field="*{manufacturer}">
+        </div>
+    </div>
+    <div>
+        <label>Description:</label>
+        <div>
+            <input type="text" id="inputDesc" th:field="*{description}">
+        </div>
+    </div>
+    <div>
+        <label>Status</label>
+        <div>
+            <select id="selectStatus" th:field="*{status}">
+                <option th:each="st : ${T(com.iuh.edu.vn.week7.backend.enums.ProductStatus).values()}"
+                        th:value="${st}" th:text="${st}"></option>
+            </select>
+        </div>
+    </div>
+    <td th:if="${product.productPrices != null and !product.productPrices.isEmpty()}" th:text="${product.productPrices[0].price}"></td>
 
+    <div>
+        <input type="submit" value="Add Product">
+    </div>
+</form>
 </body>
 </html>
