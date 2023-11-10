@@ -44,7 +44,7 @@ gần nhất.
 * Nhập giá và thêm ghi chú của sản phẩm: </br> ![image](https://github.com/Genzi135/HuynhTrieuPhu-20076921-Java-WWW/assets/104980263/ff9d7b99-0384-496c-9cbd-83b95bcfa176)
 * Chọn "Add Price" để hoàn tất việc thêm sản phẩm: </br> ![image](https://github.com/Genzi135/HuynhTrieuPhu-20076921-Java-WWW/assets/104980263/dd4e4f79-d374-44df-be70-00f898c402e8)
 ### Cập nhật sản phẩm
-* Để cập nhật sản phẩm chọn vào update ở ô Link: ![image](https://github.com/Genzi135/HuynhTrieuPhu-20076921-Java-WWW/assets/104980263/234c06ae-2083-48e5-9144-334a5ef6948c)
+* Để cập nhật sản phẩm chọn vào update ở ô Link: </br> ![image](https://github.com/Genzi135/HuynhTrieuPhu-20076921-Java-WWW/assets/104980263/234c06ae-2083-48e5-9144-334a5ef6948c)
 * Thay đổi các thông tin ở form: </br> ![image](https://github.com/Genzi135/HuynhTrieuPhu-20076921-Java-WWW/assets/104980263/13b4b781-edce-40f0-b041-b69a85ffbe64)
 * Chọn Submit để cập nhật lại thông tin sản phẩm: ![image](https://github.com/Genzi135/HuynhTrieuPhu-20076921-Java-WWW/assets/104980263/2724081e-b924-4942-9c9f-ba185bc322e0)
 ### Xóa sản phẩm
