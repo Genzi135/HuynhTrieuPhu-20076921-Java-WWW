@@ -7,7 +7,7 @@ Một công ty cần viết một ứng dụng web cho công việc bán hàng c
 - product_image (product_id, image_id, path, alternative)
 - order (order_id, order_date, emp_id, cust_id)
 - order_detail (order_id, product_id, quantity, price, note)
-- product_price (product_id, price_date_time, price, note) /br
+- product_price (product_id, price_date_time, price, note) </br>
 Diễn giải:
 - Một product có nhiều image, một image thuộc về một product. Status chỉ trạng thái kinh doanh 
 của sản phẩm: 1- đang kinh doanh, 0 - tạm ngưng, -1 - không kinh doanh nữa.
