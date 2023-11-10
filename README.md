@@ -20,13 +20,15 @@ bằng product_id và price_date_time. Tại thời điểm lập order, giá đ
 gần nhất.
 ## Chức năng:
 - CRUD cho product
-- THống kế theo thời gian (đang cập nhật)
-- THống kê theo order theo nhân viên (đang cập nhật)
+- THông kế theo thời gian (đang cập nhật)
+- THông kê theo order theo nhân viên (đang cập nhật)
 ## Hướng dẫn sử dụng:
 * Cấu hình project:
   ![image](https://github.com/Genzi135/HuynhTrieuPhu-20076921-Java-WWW/assets/104980263/4f65964a-9176-46a4-892e-8011ba5855fc)
 * Run project:
   ![image](https://github.com/Genzi135/HuynhTrieuPhu-20076921-Java-WWW/assets/104980263/6988d65a-16b1-4af6-b397-8d1f3e41efa0)
+* Sau đó mở trình duyệt và mở "http://localhost:8080/products" ở thanh search: ![image](https://github.com/Genzi135/HuynhTrieuPhu-20076921-Java-WWW/assets/104980263/a46b2545-e8a1-4877-ae3e-397e11c69203)
+
 ## Database diagram:
 ![image](https://github.com/Genzi135/HuynhTrieuPhu-20076921-Java-WWW/assets/104980263/819a4154-c0ae-42ce-8f3a-d8eb8d94ec35)
 
