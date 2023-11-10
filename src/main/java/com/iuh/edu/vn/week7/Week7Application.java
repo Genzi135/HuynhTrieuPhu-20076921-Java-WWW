@@ -57,7 +57,8 @@ public class Week7Application {
 				);
 				productRepository.save(product);
 
-				ProductPrice productPrice=new ProductPrice(product,
+				ProductPrice productPrice=new ProductPrice(
+						product,
 						LocalDateTime.now(),
 						number.randomDouble(2,100,1000),
 						""

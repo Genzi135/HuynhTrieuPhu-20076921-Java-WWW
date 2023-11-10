@@ -1,6 +1,8 @@
 package com.iuh.edu.vn.week7.frontend.controllers;
 
 import com.iuh.edu.vn.week7.backend.models.Product;
+import com.iuh.edu.vn.week7.backend.models.ProductPrice;
+import com.iuh.edu.vn.week7.backend.repositories.ProductPriceRepository;
 import com.iuh.edu.vn.week7.backend.repositories.ProductRepository;
 import com.iuh.edu.vn.week7.backend.services.ProductServices;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -21,6 +24,8 @@ public class ProductController {
     ProductServices productServices;
     @Autowired
     ProductRepository productRepository;
+    @Autowired
+    ProductPriceRepository productPriceRepository;
 
     @GetMapping("/products")
     public String showProductListPaging(Model model,
@@ -53,9 +58,10 @@ public class ProductController {
     }
 
     @PostMapping("/products/add")
-    public String addProduct(@ModelAttribute("product") Product product, BindingResult result, Model model){
+    public String addProduct(@ModelAttribute("product") Product product,  BindingResult result, Model model){
         productRepository.save(product);
-        return "redirect:/products";
+        model.addAttribute("product_id", product.getProduct_id());
+        return "redirect:/show-form-add-price?product_id=" +product.getProduct_id();
     }
 
     @GetMapping("/products/delete/{id}")
@@ -64,4 +70,29 @@ public class ProductController {
         productRepository.delete(product);
         return "redirect:/products";
     }
+
+    @GetMapping("/show-form-add-price")
+    public String addPrice(@RequestParam("product_id") long productId, Model model) {
+        Product product = productRepository.findById(productId).orElse(null);
+
+        if (product == null) {
+            return "redirect:/error";
+        }
+
+        ProductPrice price = new ProductPrice();
+        price.setProduct(product);
+        model.addAttribute("productPrice", price);
+        return "admin/product/add-price-form";
+    }
+
+    @PostMapping("/products/add-price-form")
+    public String addProductPrice(@ModelAttribute("productPrice") ProductPrice productPrice, Model model){
+        if (productPrice.getPrice_date_time()==null){
+            productPrice.setPrice_date_time(LocalDateTime.now());
+        }
+        productPriceRepository.save(productPrice);
+        return "redirect:/products";
+
+    }
+
 }

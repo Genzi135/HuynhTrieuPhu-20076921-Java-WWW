@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Add Product</title>
+    <title>Add Price</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <style>
@@ -42,29 +42,20 @@
 </head>
 <body>
 <div class="form-container">
-    <h1>Add Product</h1>
-    <form th:action="@{/products/add}" th:object="${product}" method="post">
-        <label for="inputName">Name:</label>
-        <input type="text" id="inputName" th:field="*{name}">
+    <h1>Add Price</h1>
+    <form th:action="@{/products/add-price-form}" th:object="${productPrice}" method="post">
+        <label for="inputProductId">Product ID:</label>
+        <input type="text" id="inputProductId" th:field="*{product}">
 
-        <label for="inputUnit">Unit:</label>
-        <input type="text" id="inputUnit" th:field="*{unit}">
+        <input type="hidden" id="inputPriceDateTime" th:field="*{price_date_time}" th:value="${#dates.createNow()}">
 
-        <label for="inputManu">Manufacturer:</label>
-        <input type="text" id="inputManu" th:field="*{manufacturer}">
+        <label for="inputPrice">Price:</label>
+        <input type="text" id="inputPrice" th:field="*{price}">
 
-        <label for="inputDesc">Description:</label>
-        <input type="text" id="inputDesc" th:field="*{description}">
+        <label for="inputNote">Note:</label>
+        <input type="text" id="inputNote" th:field="*{note}">
 
-        <label for="selectStatus">Status:</label>
-        <select id="selectStatus" th:field="*{status}">
-            <option th:each="st : ${T(com.iuh.edu.vn.week7.backend.enums.ProductStatus).values()}"
-                    th:value="${st}" th:text="${st}"></option>
-        </select>
-
-        <input type="hidden" th:field="*{product_id}">
-
-        <input type="submit" value="Add Product">
+        <input type="submit" value="Add Price">
     </form>
 </div>
 </body>

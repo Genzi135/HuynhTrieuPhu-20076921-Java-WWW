@@ -22,7 +22,7 @@ public class Product {
     private String name;
 
     @Lob
-    @Column(name = "description",  columnDefinition = "text", nullable = false)
+    @Column(name = "description",  columnDefinition = "text", nullable = true)
     private String description;
     @Column(name = "unit", length = 25, nullable = false)
     private String unit;

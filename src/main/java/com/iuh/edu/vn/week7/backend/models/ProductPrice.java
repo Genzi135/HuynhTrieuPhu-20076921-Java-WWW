@@ -18,7 +18,7 @@ public class ProductPrice {
     private LocalDateTime price_date_time;
     @Column(name = "price", nullable = false)
     private double price;
-    @Column(name = "note")
+    @Column(name = "note", nullable = true)
     private String note;
 
     public ProductPrice() {
