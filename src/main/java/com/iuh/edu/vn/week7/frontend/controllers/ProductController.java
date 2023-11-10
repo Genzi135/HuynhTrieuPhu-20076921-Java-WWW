@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -68,6 +69,35 @@ public class ProductController {
     public String deleteProduct(@PathVariable("id") long id){
         Product product=productRepository.findById(id).orElse(new Product());
         productRepository.delete(product);
+        return "redirect:/products";
+    }
+
+    @GetMapping("/products/show-update-product/{id}")
+    public String showUpdateProduct(@PathVariable("id") long id, Model model){
+        Product product=productRepository.findById(id).orElse(new Product());
+        if (product==null){
+            return "redirect:/products";
+        }
+        model.addAttribute("product", product);
+        return "admin/product/update-form";
+    }
+
+    @PostMapping("/products/update-product")
+    public String updateProduct(@ModelAttribute("product") Product product, RedirectAttributes redirectAttributes){
+        Long productID=product.getProduct_id();
+        Product existingProduct=productRepository.findById(productID).orElse(new Product());
+        if (existingProduct==null){
+            return "redirect:/products";
+        }
+        existingProduct.setName(product.getName());
+        existingProduct.setDescription(product.getDescription());
+        existingProduct.setManufacturer(product.getManufacturer());
+        existingProduct.setUnit(product.getUnit());
+        existingProduct.setStatus(product.getStatus());
+
+        productRepository.save(existingProduct);
+
+        redirectAttributes.addFlashAttribute("success message", "sản phẩm đã được cập nhật thành công");
         return "redirect:/products";
     }
 

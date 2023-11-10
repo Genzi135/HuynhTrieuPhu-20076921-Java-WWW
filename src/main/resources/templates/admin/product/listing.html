@@ -9,6 +9,7 @@
         body {
             font-family: Arial, sans-serif;
             padding: 20px;
+            gap:10px;
         }
         h1 {
             color: #007BFF;
@@ -60,9 +61,11 @@
 
     </style>
 </head>
-<body>
+<body >
 <h1>Danh sách sản phẩm</h1>
-<a href="/show-add-form">Thêm sản phẩm mới</a>
+<div style="display: flex ;width: 170px;height: 30px;border:1px solid #007BFF; border-radius: 15px; justify-content: center; align-items: center; margin-bottom: 20px">
+    <a href="/show-add-form" >Thêm sản phẩm mới</a>
+</div>
 <table>
     <thead>
     <tr>
@@ -84,7 +87,7 @@
         <td th:text="${product.productPrices[0].price}"></td>
         <td th:text="${product.description}"></td>
         <td>
-
+            <a th:href="@{/products/show-update-product/{id}(id=${product.product_id})}" class="delete-link">Update</a>
             <a th:href="@{/products/delete/{id}(id=${product.product_id})}" class="delete-link">Delete</a>
 
         </td>

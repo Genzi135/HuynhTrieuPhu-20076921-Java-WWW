@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h1 {
+            color: #007BFF;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .form-container {
+            max-width: 500px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="form-container">
+
+    <h1>Update product</h1>
+    <form th:action="@{/products/update-product}" th:object="${product}" method="post">
+        <input type="hidden" th:field="*{product_id}">
+        <div>
+            <label>Name:</label>
+            <input type="text" th:field="*{name}">
+        </div>
+        <div>
+            <label>Unit:</label>
+            <input type="text" th:field="*{unit}">
+        </div>
+        <div>
+            <label>Manufacturer:</label>
+            <input type="text" th:field="*{manufacturer}">
+        </div>
+        <div>
+            <label>Description:</label>
+            <textarea type="text" th:field="*{description}" style="height: 150px; width: 99%" ></textarea>
+        </div>
+        <div>
+            <label>Status:</label>
+            <select id="selectStatus" th:field="*{status}">
+                <option th:each="st : ${T(com.iuh.edu.vn.week7.backend.enums.ProductStatus).values()}"
+                        th:value="${st}" th:text="${st}"></option>
+            </select>
+        </div>
+
+        <button type="submit" value="Update product">Submit</button>
+    </form>
+</div>
+</body>
+</html>
