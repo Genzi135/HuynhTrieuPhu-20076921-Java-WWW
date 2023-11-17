@@ -84,8 +84,12 @@ Và một giỏ hàng rỗng: </br>
 ![image](https://github.com/Genzi135/HuynhTrieuPhu-20076921-Java-WWW/assets/104980263/7d25513f-d6f9-4cea-81d5-277e940f7fc6)
 
 </br>
+
 ![image](https://github.com/Genzi135/HuynhTrieuPhu-20076921-Java-WWW/assets/104980263/1e065594-9a8f-4d29-aae6-9a5b1f232aac)
-</br> Click buy để mua hàng và lưu dữ liệu của order vào database: ![image](https://github.com/Genzi135/HuynhTrieuPhu-20076921-Java-WWW/assets/104980263/182818ca-dba3-4657-aa99-2d7cc4806b54)
+</br>
+Click buy để mua hàng và lưu dữ liệu của order vào database:
+
+![image](https://github.com/Genzi135/HuynhTrieuPhu-20076921-Java-WWW/assets/104980263/182818ca-dba3-4657-aa99-2d7cc4806b54)
 
 
 
