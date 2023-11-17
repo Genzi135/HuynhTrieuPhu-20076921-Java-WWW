@@ -1,54 +1,55 @@
 package backend.models;
 
 import jakarta.persistence.*;
-import org.joda.time.DateTime;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
 @Table(name = "orders")
 public class Order {
-    //order (order_id, order_date, emp_id, cust_id)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long order_id;
-    @Column
-    private DateTime order_date;
+    @Column(name = "order_id")
+    private long order_id;
 
-    @ManyToOne
-    @JoinColumn(name = "emp_id")
+    @Column(name = "order_date", nullable = false)
+    private LocalDateTime orderDate;
+
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "employee_id", nullable = false)
     private Employee employee;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "cust_id")
     private Customer customer;
 
-    @OneToMany(fetch = FetchType.LAZY)
-    private List<Order_Detail> orderDetailList;
-
-    public Order(DateTime order_date, Employee employee, Customer customer) {
-        this.order_date = order_date;
-        this.employee = employee;
-        this.customer = customer;
-    }
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
+    private List<OrderDetail> orderDetails;
 
     public Order() {
     }
 
-    public Long getOrder_id() {
+    public Order(LocalDateTime orderDate, Employee employee, Customer customer) {
+        this.orderDate = orderDate;
+        this.employee = employee;
+        this.customer = customer;
+    }
+
+    public long getOrder_id() {
         return order_id;
     }
 
-    public void setOrder_id(Long order_id) {
+    public void setOrder_id(long order_id) {
         this.order_id = order_id;
     }
 
-    public DateTime getOrder_date() {
-        return order_date;
+    public LocalDateTime getOrderDate() {
+        return orderDate;
     }
 
-    public void setOrder_date(DateTime order_date) {
-        this.order_date = order_date;
+    public void setOrderDate(LocalDateTime orderDate) {
+        this.orderDate = orderDate;
     }
 
     public Employee getEmployee() {
@@ -67,22 +68,22 @@ public class Order {
         this.customer = customer;
     }
 
-    public List<Order_Detail> getOrderDetailList() {
-        return orderDetailList;
+    public List<OrderDetail> getOrderDetails() {
+        return orderDetails;
     }
 
-    public void setOrderDetailList(List<Order_Detail> orderDetailList) {
-        this.orderDetailList = orderDetailList;
+    public void setOrderDetails(List<OrderDetail> orderDetails) {
+        this.orderDetails = orderDetails;
     }
 
     @Override
     public String toString() {
         return "Order{" +
                 "order_id=" + order_id +
-                ", order_date=" + order_date +
+                ", orderDate=" + orderDate +
                 ", employee=" + employee +
                 ", customer=" + customer +
-                ", orderDetailList=" + orderDetailList +
+                ", orderDetails=" + orderDetails +
                 '}';
     }
 }

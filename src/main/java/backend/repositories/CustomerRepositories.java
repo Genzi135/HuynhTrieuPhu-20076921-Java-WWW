@@ -55,5 +55,10 @@ public class CustomerRepositories {
         return em.find(Customer.class, id);
     }
 
+    public Customer findByName(String name) {
+        return em.createNamedQuery("Customer.FIND_BY_NAME", Customer.class).setParameter("name", name)
+                .getSingleResult();
+    }
+
 
 }

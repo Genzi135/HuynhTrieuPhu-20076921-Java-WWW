@@ -5,31 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f947e635-6c85-4e2b-b29b-c0af75b9fcb0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/backend/emuns/ProductStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/backend/Services/CustomerServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/backend/Services/EmployeeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/backend/enums/EmployeeStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/backend/enums/ProductStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/backend/pks/OrderDetailPK.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/backend/pks/ProductPricePK.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Cart.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/CustomerAuthentication.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/NewCustomer.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/ProductDelete.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/ProductUpdate.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Shopping.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/backend/Connection/ConnectDB.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/backend/Converters/EmpStatusConverter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/backend/Services/En4OrderDetail.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/backend/Services/En4Orders.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/backend/emuns/EmpStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/emuns/EmpStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/Services/ProductServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/Services/ProductServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/emuns/EmpStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/emuns/ProductStatus.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/backend/models/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/models/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/backend/models/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/models/Employee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/backend/models/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/models/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/backend/models/Order_Detail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/models/Order_Detail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/models/Order_Detail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/models/OrderDetail.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/backend/models/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/models/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/backend/models/Product_Price.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/models/Product_Price.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/models/Product_Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/models/ProductImage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/models/Product_Price.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/models/ProductPrice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/backend/repositories/CustomerRepositories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/repositories/CustomerRepositories.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/backend/repositories/EmployeeRepositories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/repositories/EmployeeRepositories.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/Controllers/ServletController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/models/Customer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frontend/models/ProductModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/repositories/OrderRepositories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/repositories/OrderRepositories.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/repositories/ProductRepositories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/repositories/ProductRepositories.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/Product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Product.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/ProductInsert.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ProductInsert.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,9 +69,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -100,7 +110,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;week2&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Java/WWW/labs/Java_www/week2&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Java/WWW/labs/Java_www/onGK1&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -116,6 +126,9 @@
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="frontend.models" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Java\WWW\labs\Java_www\week2\src\main\java\backend" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.13">
@@ -264,7 +277,13 @@
       <workItem from="1698225007520" duration="2481000" />
       <workItem from="1698249584554" duration="2086000" />
       <workItem from="1698301584850" duration="72000" />
-      <workItem from="1698997806600" duration="1944000" />
+      <workItem from="1698997806600" duration="2163000" />
+      <workItem from="1699354173645" duration="170000" />
+      <workItem from="1699365229926" duration="36000" />
+      <workItem from="1700015884608" duration="4185000" />
+      <workItem from="1700020430611" duration="314000" />
+      <workItem from="1700023674156" duration="13514000" />
+      <workItem from="1700208616659" duration="2152000" />
     </task>
     <task id="LOCAL-00001" summary="add repositories and fix persistence.xml">
       <option name="closed" value="true" />
@@ -282,7 +301,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695986649345</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fix entity">
+      <option name="closed" value="true" />
+      <created>1698999960111</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1698999960111</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,7 +318,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add repositories and fix persistence.xml" />
     <MESSAGE value="fix project struture, write front end and services" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix project struture, write front end and services" />
+    <MESSAGE value="fix entity" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix entity" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

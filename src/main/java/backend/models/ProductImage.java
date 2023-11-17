@@ -3,46 +3,39 @@ package backend.models;
 import jakarta.persistence.*;
 
 @Entity
-@Table
-public class Product_Image {
-    //product_image (product_id, image_id, path, alternative)
+@Table(name = "product_image")
+public class ProductImage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long image_id;
+    @Column(name = "image_id")
+    private long image_id;
+    /*@Column(name = "product_id")
+    private long product_id;*/
+    @Column(name = "path", length = 250, nullable = false)
+    private String path;
+    @Column(name = "alternative", length = 250)
+    private String alternative;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "product_id")
     private Product product;
 
-    private String path;
+    public ProductImage() {
+    }
 
-    private String alternative;
-
-    public Product_Image(Long image_id, Product product, String path, String alternative) {
-        this.image_id = image_id;
-        this.product = product;
+    public ProductImage(String path, String alternative) {
         this.path = path;
         this.alternative = alternative;
     }
 
-    public Product_Image() {
-    }
-
-    public Long getImage_id() {
+    public long getImage_id() {
         return image_id;
     }
 
-    public void setImage_id(Long image_id) {
+    public void setImage_id(long image_id) {
         this.image_id = image_id;
     }
 
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
 
     public String getPath() {
         return path;
@@ -60,13 +53,21 @@ public class Product_Image {
         this.alternative = alternative;
     }
 
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
     @Override
     public String toString() {
-        return "Product_Image{" +
+        return "ProductImage{" +
                 "image_id=" + image_id +
-                ", product=" + product +
                 ", path='" + path + '\'' +
                 ", alternative='" + alternative + '\'' +
+                ", product=" + product +
                 '}';
     }
 }

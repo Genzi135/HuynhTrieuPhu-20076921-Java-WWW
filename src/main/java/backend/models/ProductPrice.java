@@ -1,42 +1,34 @@
 package backend.models;
 
+import backend.pks.ProductPricePK;
 import jakarta.persistence.*;
-import org.joda.time.DateTime;
+
+import java.time.LocalDateTime;
 
 @Entity
-@Table
-public class Product_Price {
-    //product_price (product_id, price_date_time, price, note)
+@Table(name = "product_price")
+@IdClass(ProductPricePK.class)
+public class ProductPrice {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long price_id;
-
-    @ManyToOne
     @JoinColumn(name = "product_id")
+    @ManyToOne(cascade = CascadeType.MERGE)
     private Product product;
-
-    private DateTime price_date_time;
-
-    private long price;
-
+    @Id
+    @Column(name = "price_date_time")
+    private LocalDateTime price_date_time;
+    @Column(name = "price", nullable = false)
+    private double price;
+    @Column(name = "note", nullable = true)
     private String note;
 
-    public Product_Price(Product product, DateTime price_date_time, long price, String note) {
+    public ProductPrice() {
+    }
+
+    public ProductPrice(Product product, LocalDateTime price_date_time, double price, String note) {
         this.product = product;
         this.price_date_time = price_date_time;
         this.price = price;
         this.note = note;
-    }
-
-    public Product_Price() {
-    }
-
-    public Long getPrice_id() {
-        return price_id;
-    }
-
-    public void setPrice_id(Long price_id) {
-        this.price_id = price_id;
     }
 
     public Product getProduct() {
@@ -47,19 +39,19 @@ public class Product_Price {
         this.product = product;
     }
 
-    public DateTime getPrice_date_time() {
+    public LocalDateTime getPrice_date_time() {
         return price_date_time;
     }
 
-    public void setPrice_date_time(DateTime price_date_time) {
+    public void setPrice_date_time(LocalDateTime price_date_time) {
         this.price_date_time = price_date_time;
     }
 
-    public long getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(long price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -73,9 +65,8 @@ public class Product_Price {
 
     @Override
     public String toString() {
-        return "Product_Price{" +
-                "price_id=" + price_id +
-                ", product=" + product +
+        return "ProductPrice{" +
+                "product=" + product +
                 ", price_date_time=" + price_date_time +
                 ", price=" + price +
                 ", note='" + note + '\'' +

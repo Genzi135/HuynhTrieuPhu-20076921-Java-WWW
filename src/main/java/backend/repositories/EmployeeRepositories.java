@@ -24,8 +24,6 @@ public class EmployeeRepositories {
             if (tr.isActive())
                 tr.rollback();
             e.printStackTrace();
-        } finally {
-            em.close();
         }
     }
 
@@ -38,8 +36,6 @@ public class EmployeeRepositories {
             if (tr.isActive())
                 tr.rollback();
             e.printStackTrace();
-        } finally {
-            em.close();
         }
     }
 
@@ -52,8 +48,10 @@ public class EmployeeRepositories {
             if (tr.isActive())
                 tr.rollback();
             e.printStackTrace();
-        } finally {
-            em.close();
         }
+    }
+
+    public Employee findByID(String id) {
+        return em.find(Employee.class, Long.parseLong(id));
     }
 }

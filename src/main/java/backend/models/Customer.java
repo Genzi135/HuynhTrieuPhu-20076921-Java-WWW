@@ -6,21 +6,29 @@ import java.util.List;
 
 @Entity
 @Table(name = "customer")
+@NamedQueries({
+        @NamedQuery(name = "Customer.getAll", query = "select c from Customer c"),
+        @NamedQuery(name = "Customer.FIND_BY_NAME", query = "select c from Customer c where c.name =: name")
+})
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cust_id")
-    private Long id;
-    @Column(name = "cust_name", length = 150)
+    private long id;
+    @Column(name = "cust_name", length = 150, nullable = false)
     private String name;
-    @Column(length = 150)
+    @Column(name = "email", unique = true, length = 150, nullable = true)
     private String email;
-    @Column(length = 15)
+    @Column(name = "phone", length = 15, nullable = false)
     private String phone;
-    @Column(length = 250)
+    @Column(name = "address", length = 250, nullable = false)
     private String address;
-    @OneToMany(mappedBy = "order_id", fetch = FetchType.LAZY)
+
+    @OneToMany(mappedBy = "customer")
     private List<Order> orderList;
+
+    public Customer() {
+    }
 
     public Customer(String name, String email, String phone, String address) {
         this.name = name;
@@ -29,14 +37,11 @@ public class Customer {
         this.address = address;
     }
 
-    public Customer() {
-    }
-
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -70,6 +75,14 @@ public class Customer {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public List<Order> getOrderList() {
+        return orderList;
+    }
+
+    public void setOrderList(List<Order> orderList) {
+        this.orderList = orderList;
     }
 
     @Override

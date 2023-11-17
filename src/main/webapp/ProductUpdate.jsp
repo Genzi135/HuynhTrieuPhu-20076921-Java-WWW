@@ -2,9 +2,15 @@
 <%@ page import="backend.enums.ProductStatus" %>
 <%@ page import="backend.models.Product" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    String id = request.getParameter("id");
+    ProductServices productServices = new ProductServices();
+    Product product = productServices.findById(id);
+
+%>
 <html>
 <head>
-    <title>Product Insert</title>
+    <title>Product Update</title>
     <style>
         body {
             background-color: blueviolet;
@@ -52,7 +58,7 @@
 </head>
 <body>
 <%
-    ProductServices productServices = new ProductServices();
+
 
     // Kiểm tra nếu có dữ liệu được gửi từ form
     if ("post".equalsIgnoreCase(request.getMethod())) {
@@ -66,7 +72,6 @@
         if (name != null && !name.isEmpty() && desc != null && !desc.isEmpty() &&
                 unit != null && !unit.isEmpty() && manu != null && !manu.isEmpty()) {
 
-            Product product = new Product();
             product.setName(name);
             product.setDescription(desc);
             product.setUnit(unit);
@@ -77,7 +82,7 @@
             System.out.println(product.toString());
 
             // Thực hiện insert
-            productServices.insert(product);
+            productServices.update(product);
 
             // Chuyển hướng lại đến trang Product.jsp
             response.sendRedirect("Product.jsp");
@@ -89,16 +94,16 @@
 %>
 <form method="post">
     <label for="name">Name:</label>
-    <input type="text" name="name" id="name" required/><br/>
+    <input type="text" name="name" id="name" required value="<%=product.getName()%>"/><br/>
 
     <label for="desc">Description:</label>
-    <input type="text" name="desc" id="desc" required/><br/>
+    <input type="text" name="desc" id="desc" required value="<%=product.getDescription()%>"/><br/>
 
     <label for="unit">Unit:</label>
-    <input type="text" name="unit" id="unit" required/><br/>
+    <input type="text" name="unit" id="unit" required value="<%=product.getUnit()%>"/><br/>
 
     <label for="manu">Manufacturer:</label>
-    <input type="text" name="manu" id="manu" required/><br/>
+    <input type="text" name="manu" id="manu" required value="<%=product.getManufacturer()%>"/><br/>
 
     <label for="status">Status:</label>
     <select name="status" id="status">
@@ -107,7 +112,7 @@
         <option value="TERMINATED" label="TERMINATED">TERMINATED</option>
     </select><br/>
 
-    <input type="submit" value="Insert"/>
+    <input type="submit" value="Update"/>
     <input type="reset" value="Clear"/>
 </form>
 </body>

@@ -1,7 +1,6 @@
 package backend.repositories;
 
-import backend.Connection.ConnectDB;
-import backend.emuns.EmpStatus;
+import backend.enums.EmployeeStatus;
 import backend.models.Product;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
@@ -27,8 +26,6 @@ public class ProductRepositories {
             if (tr.isActive())
                 tr.rollback();
             e.printStackTrace();
-        } finally {
-            em.close();
         }
     }
 
@@ -41,28 +38,29 @@ public class ProductRepositories {
             if (tr.isActive())
                 tr.rollback();
             e.printStackTrace();
-        } finally {
-            em.close();
         }
     }
 
-    public void delete(String id) {
+    public void delete(Product p) {
         try {
             tr.begin();
-            em.remove(id);
+            em.remove(p);
             tr.commit();
         } catch (Exception e) {
             if (tr.isActive())
                 tr.rollback();
             e.printStackTrace();
-        } finally {
-            em.close();
         }
     }
 
     public List<Product> getActiveProduct() {
         return em.createNamedQuery("Product.findAll", Product.class)
-
                 .getResultList();
     }
+
+    public Product findById(String id) {
+        return em.createNamedQuery("Product.findById", Product.class).setParameter("id", Long.parseLong(id)).getSingleResult();
+    }
+
+
 }

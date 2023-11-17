@@ -1,6 +1,5 @@
 package backend.repositories;
 
-import backend.Connection.ConnectDB;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;

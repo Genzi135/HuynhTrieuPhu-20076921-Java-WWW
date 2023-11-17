@@ -1,59 +1,62 @@
 package backend.models;
 
-import backend.emuns.EmpStatus;
+import backend.enums.ProductStatus;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
-
 
 @Entity
 @Table(name = "product")
 @NamedQueries(value = {
-        @NamedQuery(name = "Product.findAll", query = "from  Product where status=1"),
-        @NamedQuery(name = "Product.findById", query = "select id from  Product where id=product_id")
+        @NamedQuery(name = "Product.findAll", query = "select p from Product p where p.status =0"),
+        @NamedQuery(name = "Product.findById", query = "select p from Product p where p.product_id =: id")
+        //,...1
 })
 public class Product {
-    //product (product_id, name, description, unit, manufacturer_name, status)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long product_id;
-
+    @Column(name = "product_id")
+    private long product_id;
+    @Column(name = "name", length = 150, nullable = false)
     private String name;
 
+    @Lob
+    @Column(name = "description", columnDefinition = "text", nullable = true)
     private String description;
-
+    @Column(name = "unit", length = 25, nullable = false)
     private String unit;
+    @Column(name = "manufacturer_name", length = 100, nullable = false)
+    private String manufacturer;
 
-    private String manufacturer_name;
+    @Column(name = "status")
+    private ProductStatus status;
 
-    private EmpStatus status;
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+    private List<ProductImage> productImageList = new ArrayList<>();
 
-    @OneToMany(mappedBy = "order_detail_id")
-    private List<Order_Detail> order_detailList;
-
-    @OneToMany(mappedBy = "image_id")
-    private List<Product_Image> productImageList;
-
-    @OneToMany(mappedBy = "price_id")
-    private List<Product_Price> productPriceList;
-
-    public Product(String name, String description, String unit, String manufacturer_name, EmpStatus status) {
-        this.name = name;
-        this.description = description;
-        this.unit = unit;
-        this.manufacturer_name = manufacturer_name;
-        this.status = status;
-    }
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+    private List<OrderDetail> orderDetails = new ArrayList<>();
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+    private List<ProductPrice> productPrices = new ArrayList<>();
 
     public Product() {
     }
 
-    public Long getProduct_id() {
+    public Product(String name, String description, String unit, String manufacturer, ProductStatus status) {
+        this.name = name;
+        this.description = description;
+        this.unit = unit;
+        this.manufacturer = manufacturer;
+        this.status = status;
+    }
+
+    public long getProduct_id() {
         return product_id;
     }
 
-    public void setProduct_id(Long product_id) {
-        this.product_id = product_id;
+    public void setProduct_id(long id) {
+        this.product_id = id;
     }
 
     public String getName() {
@@ -80,58 +83,57 @@ public class Product {
         this.unit = unit;
     }
 
-    public String getManufacturer_name() {
-        return manufacturer_name;
+    public String getManufacturer() {
+        return manufacturer;
     }
 
-    public void setManufacturer_name(String manufacturer_name) {
-        this.manufacturer_name = manufacturer_name;
+    public void setManufacturer(String manufacturer) {
+        this.manufacturer = manufacturer;
     }
 
-    public EmpStatus getStatus() {
+    public ProductStatus getStatus() {
         return status;
     }
 
-    public void setStatus(EmpStatus status) {
+    public void setStatus(ProductStatus status) {
         this.status = status;
     }
 
-    public List<Order_Detail> getOrder_detailList() {
-        return order_detailList;
-    }
-
-    public void setOrder_detailList(List<Order_Detail> order_detailList) {
-        this.order_detailList = order_detailList;
-    }
-
-    public List<Product_Image> getProductImageList() {
+    public List<ProductImage> getProductImageList() {
         return productImageList;
     }
 
-    public void setProductImageList(List<Product_Image> productImageList) {
+    public void setProductImageList(List<ProductImage> productImageList) {
         this.productImageList = productImageList;
     }
 
-    public List<Product_Price> getProductPriceList() {
-        return productPriceList;
+    public List<OrderDetail> getOrderDetails() {
+        return orderDetails;
     }
 
-    public void setProductPriceList(List<Product_Price> productPriceList) {
-        this.productPriceList = productPriceList;
+    public void setOrderDetails(List<OrderDetail> orderDetails) {
+        this.orderDetails = orderDetails;
+    }
+
+    public List<ProductPrice> getProductPrices() {
+        return productPrices;
+    }
+
+    public void setProductPrices(List<ProductPrice> productPrices) {
+        this.productPrices = productPrices;
     }
 
     @Override
     public String toString() {
         return "Product{" +
-                "product_id=" + product_id +
+                "id=" + product_id +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", unit='" + unit + '\'' +
-                ", manufacturer_name='" + manufacturer_name + '\'' +
+                ", manufacturer='" + manufacturer + '\'' +
                 ", status=" + status +
-                ", order_detailList=" + order_detailList +
-                ", productImageList=" + productImageList +
-                ", productPriceList=" + productPriceList +
                 '}';
     }
+
+
 }
