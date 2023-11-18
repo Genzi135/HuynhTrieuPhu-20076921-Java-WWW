@@ -2,6 +2,7 @@ package com.iuh.edu.vn.week4.models;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -23,6 +24,7 @@ public class Candidate {
     private String fullName;
 
     @Column
+    @DateTimeFormat
     private LocalDate dod;
 
     @Column

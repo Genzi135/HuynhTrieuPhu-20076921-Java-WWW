@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<h1 class="text-center">Thông tin tuyển dụng</h1>
+<br>
+<form action="#" th:action="@{/skills/addSkill}" th:object="${skill}" method="post" class="mx-3">
+    <div class="row mb-3">
+        <label for="name" class="col-sm-1 col-form-label">Tên kỹ năng</label>
+        <div class="col-sm-10">
+            <input type="text" name="skillName" class="form-control" id="name">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="type" class="col-sm-1 col-form-label">Loại kỹ năng</label>
+        <div class="col-sm-10">
+            <select name="type" id="type" class="form-select">
+                <option value="UNSPECIFIC">UNSPECIFIC</option>
+                <option value="TECHNICAL_SKILL">TECHNICAL_SKILL</option>
+                <option value="SOFT_SKILL">SOFT_SKILL</option>
+            </select>
+        </div>
+
+    </div>
+    <div class="row mb-3">
+        <label for="desc" class="col-sm-1 col-form-label">Mô tả kỹ năng</label>
+        <div class="col-sm-10">
+            <textarea type="text" name="skillDescription" class="form-control" id="desc"></textarea>
+        </div>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Thêm thông tin tuyển dụng</button>
+    <button class="btn btn-outline-secondary" type="button">
+        <a href="/skills">Quay lại</a>
+    </button>
+</form>
+</body>
+</html>
